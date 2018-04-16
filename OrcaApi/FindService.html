@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: OrcaApi::FindService
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "OrcaApi::FindService";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../OrcaApi.html" title="OrcaApi (module)">OrcaApi</a></span></span>
+     &raquo; 
+    <span class="title">FindService</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: OrcaApi::FindService
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></li>
+          
+            <li class="next">OrcaApi::FindService</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/orca_api/find_service.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>照会業務を扱うサービスを表現したクラス</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095</a></li>
+    
+  </ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="FindService/FindResult.html" title="OrcaApi::FindService::FindResult (class)">FindResult</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Service.html#orca_api-instance_method" title="OrcaApi::Service#orca_api (method)">#orca_api</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find-instance_method" title="#find (instance method)">#<strong>find</strong>(args)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>検索条件や検索結果返却区分を設定して、検索処理を開始するための指示を行う。この時点では検索結果は返却しない。.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#finish-instance_method" title="#finish (instance method)">#<strong>finish</strong>(args)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>日レセサーバ上の検索結果等の接続情報を消去する.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#result-instance_method" title="#result (instance method)">#<strong>result</strong>(args)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>検索が完了していた場合、検索結果を返却する。.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#settings-instance_method" title="#settings (instance method)">#<strong>settings</strong>(base_date = &quot;&quot;)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>検索指示のリクエストを行う際の設定値を返す.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Service.html#initialize-instance_method" title="OrcaApi::Service#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Service.html#reuse_session-class_method" title="OrcaApi::Service.reuse_session (method)">reuse_session</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="Service.html#initialize-instance_method" title="OrcaApi::Service#initialize (method)">OrcaApi::Service</a></span></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="find-instance_method">
+  
+    #<strong>find</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>検索条件や検索結果返却区分を設定して、検索処理を開始するための指示を行う。この時点では検索結果は返却しない。</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>詳細は <a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31.pdf</a> を参照</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api1" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api1">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api1</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv31_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/find_service.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>01</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
+  <span class='rparen'>)</span>
+  <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="finish-instance_method">
+  
+    #<strong>finish</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>日レセサーバ上の検索結果等の接続情報を消去する</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Orca_Uid&quot; (String)
+オルカUID。必須。</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api3" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api3">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api3</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv399_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/find_service.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_finish'>finish</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>99</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
+  <span class='rparen'>)</span>
+  <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="result-instance_method">
+  
+    #<strong>result</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>検索が完了していた場合、検索結果を返却する。</p>
+
+<p>検索中の場合は <code>result.doing?</code> が <code>true</code> を返すので、1秒間に1回等の間隔で検索結果返却を呼び出して、検索完了を待つ。
+1度に返却できる患者情報の数には限りがあるため、患者情報のうちN件目からM件までという指定をする。デフォルトは1件目から200件目(件数は200)。</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Orca_Uid&quot; (String)
+オルカUID。必須。</li>
+<li>&quot;Selection&quot; (Hash)
+検索結果返却開始・終了件数
+
+<ul>
+<li>&quot;First&quot; (String)
+範囲指定の開始値(［Ｎ件目からＭ件目］のＮ)。
+未設定時初期値は1</li>
+<li>&quot;Last&quot; (String)
+範囲指定の終了値(［Ｎ件目からＭ件目］のＭ)。
+未設定時初期値は200</li>
+</ul></li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api2" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api2">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api2</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findv32_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/find_service.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>02</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
+  <span class='rparen'>)</span>
+  <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_req'>req</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="FindService/FindResult.html" title="OrcaApi::FindService::FindResult (class)">FindResult</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="settings-instance_method">
+  
+    #<strong>settings</strong>(base_date = &quot;&quot;)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>検索指示のリクエストを行う際の設定値を返す</p>
+
+<p>対象の設定値は以下。</p>
+
+<ul>
+<li>状態１情報</li>
+<li>状態２情報</li>
+<li>状態３情報</li>
+<li>減免事由情報</li>
+<li>特記事項情報</li>
+<li>保険情報</li>
+<li>公費情報</li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>base_date</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>基準日。YYYY-mm-dd形式。省略時はシステム日付。</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api4" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api4">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19095#api4</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_find.data/findinfv3_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/find_service.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_settings'>settings</span><span class='lparen'>(</span><span class='id identifier rubyid_base_date'>base_date</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>01</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Base_Date</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_base_date'>base_date</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+
+  <span class='const'><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/orca13/findinfv3</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>findinfv3req</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr 16 05:39:05 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.3.7).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: OrcaApi::Service
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "OrcaApi::Service";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../OrcaApi.html" title="OrcaApi (module)">OrcaApi</a></span></span>
+     &raquo; 
+    <span class="title">Service</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: OrcaApi::Service
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">OrcaApi::Service</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/orca_api/service.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>各種情報を扱うサービスを表現したクラス
+高レベルインターフェースは、　OrcaApi::Client のインスタンスメソッドで、オブジェクトを作成することを前提。
+接続・認証情報は、各オブジェクトのプロパティ(orca_api)に保持。</p>
+
+<p>高レベルインターフェースはロックしない。あくまで1トランザクション完結として扱う。
+ロックしたいケースが仮にあるなら、低レベルインタフェースを使用する。
+具体的には、患者情報の更新中に診療行為をさせないといった排他制御はorca-apiを利用するアプリケーションで行う。</p>
+
+<pre class="code ruby"><code class="ruby">アプリケーションによるロック
+ &gt; 患者情報の取得 (参照時にORCA側で患者情報がロックされるが、変更なしで患者情報を更新してロックを解除する)
+ &gt; 患者情報の入力
+ &gt; 患者情報の更新 (ORCA側のロックは利用しない = Continue_Mode=False)
+アプリケーションによるロックの解除
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_some_object'>some_object</span> <span class='op'>=</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_new_some_class'>new_some_class</span>
+<span class='id identifier rubyid_some_object'>some_object</span><span class='period'>.</span><span class='id identifier rubyid_orca_api'>orca_api</span> <span class='op'>==</span> <span class='id identifier rubyid_orca_api'>orca_api</span>
+<span class='comment'>#=&gt; true
+</span>
+<span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_some_object'>some_object</span><span class='period'>.</span><span class='id identifier rubyid_method1'>method1</span>
+<span class='comment'># method1では接続先、認証情報を指定しなくていい。
+</span><span class='comment'># また、日レセのバージョンを極力意識しなくてもいいようにする。</span></code></pre>
+    
+  </div>
+
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="AcceptanceService.html" title="OrcaApi::AcceptanceService (class)">AcceptanceService</a></span>, <span class='object_link'><a href="BlobService.html" title="OrcaApi::BlobService (class)">BlobService</a></span>, <span class='object_link'><a href="DepartmentService.html" title="OrcaApi::DepartmentService (class)">DepartmentService</a></span>, <span class='object_link'><a href="DiseaseService.html" title="OrcaApi::DiseaseService (class)">DiseaseService</a></span>, <span class='object_link'><a href="FindService.html" title="OrcaApi::FindService (class)">FindService</a></span>, <span class='object_link'><a href="FormDataService.html" title="OrcaApi::FormDataService (class)">FormDataService</a></span>, <span class='object_link'><a href="ImageService.html" title="OrcaApi::ImageService (class)">ImageService</a></span>, <span class='object_link'><a href="IncomeService.html" title="OrcaApi::IncomeService (class)">IncomeService</a></span>, <span class='object_link'><a href="InsuranceService.html" title="OrcaApi::InsuranceService (class)">InsuranceService</a></span>, <span class='object_link'><a href="LockService.html" title="OrcaApi::LockService (class)">LockService</a></span>, <span class='object_link'><a href="MedicalPracticeService.html" title="OrcaApi::MedicalPracticeService (class)">MedicalPracticeService</a></span>, <span class='object_link'><a href="PatientService.html" title="OrcaApi::PatientService (class)">PatientService</a></span>, <span class='object_link'><a href="PatientService/AccidentInsurance.html" title="OrcaApi::PatientService::AccidentInsurance (class)">PatientService::AccidentInsurance</a></span>, <span class='object_link'><a href="PatientService/CareCommon.html" title="OrcaApi::PatientService::CareCommon (class)">PatientService::CareCommon</a></span>, <span class='object_link'><a href="PatientService/Contraindication.html" title="OrcaApi::PatientService::Contraindication (class)">PatientService::Contraindication</a></span>, <span class='object_link'><a href="PatientService/HealthPublicInsurance.html" title="OrcaApi::PatientService::HealthPublicInsurance (class)">PatientService::HealthPublicInsurance</a></span>, <span class='object_link'><a href="PatientService/HealthPublicInsuranceCommon.html" title="OrcaApi::PatientService::HealthPublicInsuranceCommon (class)">PatientService::HealthPublicInsuranceCommon</a></span>, <span class='object_link'><a href="PatientService/IncomeCommon.html" title="OrcaApi::PatientService::IncomeCommon (class)">PatientService::IncomeCommon</a></span>, <span class='object_link'><a href="PatientService/PiMoneyCommon.html" title="OrcaApi::PatientService::PiMoneyCommon (class)">PatientService::PiMoneyCommon</a></span>, <span class='object_link'><a href="PhysicianService.html" title="OrcaApi::PhysicianService (class)">PhysicianService</a></span>, <span class='object_link'><a href="PrintService.html" title="OrcaApi::PrintService (class)">PrintService</a></span>, <span class='object_link'><a href="ReceiptDataService.html" title="OrcaApi::ReceiptDataService (class)">ReceiptDataService</a></span>, <span class='object_link'><a href="ReceiptService.html" title="OrcaApi::ReceiptService (class)">ReceiptService</a></span>, <span class='object_link'><a href="RehabilitationCommentService.html" title="OrcaApi::RehabilitationCommentService (class)">RehabilitationCommentService</a></span>, <span class='object_link'><a href="UserService.html" title="OrcaApi::UserService (class)">UserService</a></span></p>
+</div>
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#orca_api-instance_method" title="#orca_api (instance method)">#<strong>orca_api</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute orca_api.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reuse_session-class_method" title="reuse_session (class method)">.<strong>reuse_session</strong>(*method_names)  &#x21d2; Module </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>OrcaApi::Client#reuse_session でラップするためのマクロメソッド.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(orca_api)  &#x21d2; Service </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of Service.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(orca_api)  &#x21d2; <tt><span class='object_link'><a href="" title="OrcaApi::Service (class)">Service</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of Service</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/service.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='rparen'>)</span>
+  <span class='ivar'>@orca_api</span> <span class='op'>=</span> <span class='id identifier rubyid_orca_api'>orca_api</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="orca_api-instance_method">
+  
+    #<strong>orca_api</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute orca_api</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/service.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_orca_api'>orca_api</span>
+  <span class='ivar'>@orca_api</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="reuse_session-class_method">
+  
+    .<strong>reuse_session</strong>(*method_names)  &#x21d2; <tt>Module</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>OrcaApi::Client#reuse_session でラップするためのマクロメソッド</p>
+
+<p>あるメソッド内で複数回 OrcaApi::Client#call を呼び出す時、#call ごとにその都度HTTPセッションが作成される。</p>
+
+<p>http keep-alive が有効な場合、作成したHTTPセッションを使いまわすことで、パフォーマンスを向上させることができる。</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>SomeService</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="" title="OrcaApi::Service (class)">Service</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api/foo</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_response'>response</span> <span class='kw'>unless</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api/bar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_reuse_session'>reuse_session</span> <span class='symbol'>:get</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method_names</span>
+      
+      
+        <span class='type'>(<tt>&lt;Symbol, String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>ラップするメソッド名</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Module</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>プリペンドされたModule</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Client.html#reuse_session-instance_method" title="OrcaApi::Client#reuse_session (method)">Client#reuse_session</a></span></li>
+    
+      <li><span class='object_link'><a href="Client.html#reusing_session%3F-instance_method" title="OrcaApi::Client#reusing_session? (method)">Client#reusing_session?</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/service.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_reuse_session'>reuse_session</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_method_names'>method_names</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_wrapper'>wrapper</span> <span class='op'>=</span> <span class='const'>Module</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_method_names'>method_names</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_method_name'>method_name</span><span class='op'>|</span>
+      <span class='id identifier rubyid_define_method'>define_method</span><span class='lparen'>(</span><span class='id identifier rubyid_method_name'>method_name</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_blk'>blk</span><span class='op'>|</span>
+        <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_reuse_session'>reuse_session</span> <span class='kw'>do</span>
+          <span class='kw'>super</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_blk'>blk</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_prepend'>prepend</span> <span class='id identifier rubyid_wrapper'>wrapper</span>
+  <span class='id identifier rubyid_wrapper'>wrapper</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr 16 05:39:05 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.3.7).
+</div>
+
+    </div>
+  </body>
+</html>

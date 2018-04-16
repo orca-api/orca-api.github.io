@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: OrcaApi::ReceiptService
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "OrcaApi::ReceiptService";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../OrcaApi.html" title="OrcaApi (module)">OrcaApi</a></span></span>
+     &raquo; 
+    <span class="title">ReceiptService</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: OrcaApi::ReceiptService
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></li>
+          
+            <li class="next">OrcaApi::ReceiptService</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/orca_api/receipt_service.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>レセプト(明細書)を扱うサービスを表現したクラス</p>
+
+<p>レセプトの作成から印刷までの流れを以下に示す。</p>
+
+<ul>
+<li>(1) レセプト作成
+
+<ul>
+<li>(1)-1 作成指示: create</li>
+<li>(1)-2 作成確認: created
+
+<ul>
+<li>作成が完了するまで定期的に(1)-2を繰り返す</li>
+</ul></li>
+</ul></li>
+<li>(2) レセプト印刷
+
+<ul>
+<li>(2)-1 印刷指示: print</li>
+<li>(2)-2 印刷結果確認: printed
+
+<ul>
+<li>印刷(PDFの生成)が完了するまで定期的に(2)-2を繰り返す</li>
+</ul></li>
+</ul></li>
+<li>(3) PDF(大容量データ)の取得
+
+<ul>
+<li>大容量データを扱うサービス BlobService を使用して、生成したPDFを取得する</li>
+</ul></li>
+</ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19238" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19238">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19238</a></li>
+    
+  </ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">CheckResult</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Service.html#orca_api-instance_method" title="OrcaApi::Service#orca_api (method)">#orca_api</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>(args)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>レセプト作成:作成指示.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#created-instance_method" title="#created (instance method)">#<strong>created</strong>(args)  &#x21d2; OrcaApi::ReceiptService::CheckResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>レセプト作成:作成確認.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print-instance_method" title="#print (instance method)">#<strong>print</strong>(args)  &#x21d2; OrcaApi::Result </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>レセプト印刷:印刷指示.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#printed-instance_method" title="#printed (instance method)">#<strong>printed</strong>(args)  &#x21d2; OrcaApi::ReceiptService::CheckResult </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>レセプト印刷:印刷結果確認.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Service.html" title="OrcaApi::Service (class)">Service</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Service.html#initialize-instance_method" title="OrcaApi::Service#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Service.html#reuse_session-class_method" title="OrcaApi::Service.reuse_session (method)">reuse_session</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="Service.html#initialize-instance_method" title="OrcaApi::Service#initialize (method)">OrcaApi::Service</a></span></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create-instance_method">
+  
+    #<strong>create</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>レセプト作成:作成指示</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Perform_Date&quot; (String)
+実施年月日。YYYY-mm-dd形式。</li>
+<li>&quot;Perform_Month&quot; (String)
+診療年月。処理区分がAll のとき必須。</li>
+<li>&quot;InOut&quot; (String)
+入外区分。必須。I：入院、O：入院外。</li>
+<li>&quot;Receipt_Mode&quot; (String)
+処理区分。All：一括作成　All以外：個別作成。</li>
+<li>&quot;Print_Mode&quot; (String)
+印刷モード。Check：点検用　Check以外：提出用。
+個別作成でCheck(点検用)のとき、点検用は平成２０年４月診療分から対応のため、
+診療年月が平成２０年３月以前の場合は提出用として作成します。</li>
+<li>&quot;Submission_Mode&quot; (String)
+提出先。必須。
+医保 01:全件 02:社保 03:国保 04:広域 労災 05 自賠責 06:新様式 07:従来様式 08:第三者行為 公害 09。</li>
+<li>&quot;Patient_Information&quot; (Array<Hash>)
+個別対象患者一覧。個別作成のとき必須。配列の最大サイズは100。
+配列の内容は以下のHash。
+
+<ul>
+<li>&quot;Patient_ID&quot; (String)
+患者番号</li>
+<li>&quot;Patient_Perfrm_Month&quot; (String)
+診療年月</li>
+</ul></li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/receipt_service.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_call_make'>call_make</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>01</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Orca_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="created-instance_method">
+  
+    #<strong>created</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">OrcaApi::ReceiptService::CheckResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>レセプト作成:作成確認</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Orca_Uid&quot; (String)
+オルカUID。必須。</li>
+<li>&quot;Perform_Date&quot; (String)
+実施年月日。YYYY-mm-dd形式。</li>
+<li>&quot;Perform_Month&quot; (String)
+診療年月。処理区分がAll のとき必須。</li>
+<li>&quot;InOut&quot; (String)
+入外区分。必須。I：入院、O：入院外。</li>
+<li>&quot;Receipt_Mode&quot; (String)
+処理区分。All：一括作成　All以外：個別作成。</li>
+<li>&quot;Print_Mode&quot; (String)
+印刷モード。Check：点検用　Check以外：提出用。
+個別作成でCheck(点検用)のとき、点検用は平成２０年４月診療分から対応のため、
+診療年月が平成２０年３月以前の場合は提出用として作成します。</li>
+<li>&quot;Submission_Mode&quot; (String)
+提出先。必須。
+医保 01:全件 02:社保 03:国保 04:広域 労災 05 自賠責 06:新様式 07:従来様式 08:第三者行為 公害 09。</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">OrcaApi::ReceiptService::CheckResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptmakev3_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/receipt_service.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_created'>created</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">CheckResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_call_make'>call_make</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>02</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="print-instance_method">
+  
+    #<strong>print</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>レセプト印刷:印刷指示</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Orca_Uid&quot; (String)
+オルカUID。必須。</li>
+<li>&quot;Perform_Date&quot; (String)
+実施年月日。YYYY-mm-dd形式。</li>
+<li>&quot;Perform_Month&quot; (String)
+診療年月。処理区分がAll のとき必須。</li>
+<li>&quot;InOut&quot; (String)
+入外区分。必須。I：入院、O：入院外。</li>
+<li>&quot;Receipt_Mode&quot; (String)
+処理区分。All：一括作成　All以外：個別作成。</li>
+<li>&quot;Print_Mode&quot; (String)
+印刷モード。All：全件印刷 All以外：個別印刷</li>
+<li>&quot;Submission_Mode&quot; (String)
+提出先。必須。
+医保 01:全件 02:社保 03:国保 04:広域 労災 05 自賠責 06:新様式 07:従来様式 08:第三者行為 公害 09。</li>
+<li>&quot;Receipt_Information&quot; (Hash)
+個別作成明細一覧。印刷モードが個別印刷のとき必須。
+作成確認(#created)の結果に含まれるレセプト一覧(Receipt_Information)に対して、
+印刷したいレセプトに印刷指示を設定したもの。
+
+<ul>
+<li>&quot;Submission_Information&quot; (Array<Hash>)
+配列の内容は以下のHash。</li>
+<li>&quot;Submission_Position&quot; (String)
+連番。必須。</li>
+<li>&quot;Detail_Information&quot; (Array<Hash>)
+配列の内容は以下のHash。
+
+<ul>
+<li>&quot;Detail_Position&quot; (String)
+連番。必須。</li>
+<li>&quot;Print_Instruct&quot; (String)
+印刷指示。Yes：印刷　Yes以外：印刷しない。</li>
+<li>&quot;Submission_Identification&quot; (String)
+提出先</li>
+<li>&quot;Submission_Code&quot; (String)
+種別等コード。必須。</li>
+<li>&quot;Submission_Type&quot; (String)
+種別</li>
+<li>&quot;Count&quot; (String)
+件数</li>
+<li>&quot;Number_Of_Sheets&quot; (String)
+枚数</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/receipt_service.rb', line 141</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_print'>print</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_call_print'>call_print</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>01</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="printed-instance_method">
+  
+    #<strong>printed</strong>(args)  &#x21d2; <tt><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">OrcaApi::ReceiptService::CheckResult</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>レセプト印刷:印刷結果確認</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul>
+<li>&quot;Orca_Uid&quot; (String)
+オルカUID。必須。</li>
+<li>&quot;Perform_Date&quot; (String)
+実施年月日。YYYY-mm-dd形式。</li>
+<li>&quot;Perform_Month&quot; (String)
+診療年月。処理区分がAll のとき必須。</li>
+<li>&quot;InOut&quot; (String)
+入外区分。必須。I：入院、O：入院外。</li>
+<li>&quot;Receipt_Mode&quot; (String)
+処理区分。All：一括作成　All以外：個別作成。</li>
+<li>&quot;Submission_Mode&quot; (String)
+提出先。必須。
+医保 01:全件 02:社保 03:国保 04:広域 労災 05 自賠責 06:新様式 07:従来様式 08:第三者行為 公害 09。</li>
+</ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">OrcaApi::ReceiptService::CheckResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>日レセからのレスポンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori_receipt.data/receiptprintv3_err.pdf</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+166
+167
+168</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/receipt_service.rb', line 166</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_printed'>printed</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="ReceiptService/CheckResult.html" title="OrcaApi::ReceiptService::CheckResult (class)">CheckResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_call_print'>call_print</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>02</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Apr 16 05:39:06 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.3.7).
+</div>
+
+    </div>
+  </body>
+</html>
