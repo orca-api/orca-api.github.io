@@ -126,7 +126,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="HealthPublicInsurance/Result.html" title="OrcaApi::PatientService::HealthPublicInsurance::Result (class)">Result</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="HealthPublicInsurance/Result.html" title="OrcaApi::PatientService::HealthPublicInsurance::Result (class)">Result</a></span>, <span class='object_link'><a href="HealthPublicInsurance/UnselectedError.html" title="OrcaApi::PatientService::HealthPublicInsurance::UnselectedError (class)">UnselectedError</a></span>
     
   
 </p>
@@ -283,16 +283,16 @@
       <pre class="lines">
 
 
-35
-36
-37
-38
-39
-40
-41</pre>
+46
+47
+48
+49
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01'>call_01</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -357,7 +357,7 @@
         <span class='name'>params</span>
       
       
-        <span class='type'>(<tt>{"HealthInsurance_Information" =&gt; Array, "PublicInsurance_Information" =&gt; Array}</tt>)</span>
+        <span class='type'>(<tt>Hash</tt>)</span>
       
       
       
@@ -379,7 +379,7 @@
       
         <li>
           <span class="name">"HealthInsurance_Information"</span>
-          <span class="type">(<tt>Array</tt>)</span>
+          <span class="type">(<tt>Hash</tt>)</span>
           <span class="default">
             
           </span>
@@ -388,7 +388,7 @@
 
 <ul>
 <li>&quot;HealthInsurance_Info&quot;
-保険情報 (Hash)
+保険情報 (Array)
 
 <ul>
 <li>&quot;InsuranceProvider_Mode&quot; (&quot;New&quot;, &quot;Modify&quot;, &quot;Delete&quot;) 処理区分</li>
@@ -415,7 +415,7 @@
       
         <li>
           <span class="name">"PublicInsurance_Information"</span>
-          <span class="type">(<tt>Array</tt>)</span>
+          <span class="type">(<tt>Hash</tt>)</span>
           <span class="default">
             
           </span>
@@ -424,7 +424,7 @@
 
 <ul>
 <li>&quot;PublicInsurance_Info&quot;
-公費情報 (Hash)
+公費情報 (Array)
 
 <ul>
 <li>&quot;PublicInsurance_Mode&quot; (&quot;New&quot;, &quot;Modify&quot;, &quot;Delete&quot;) 処理区分</li>
@@ -437,6 +437,24 @@
 <li>&quot;Certificate_ExpiredDate&quot; (String) 適用終了日/10/省略可（９９９９９９９９）</li>
 <li>&quot;Certificate_CheckDate&quot; (String) 確認日付/10/※４</li>
 </ul></li>
+</ul>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">"Patient_Select_Information"</span>
+          <span class="type">(<tt>&lt;Hash&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>確認メッセージ</p>
+
+<ul>
+<li>&quot;Patient_Select&quot; (String) 確認コード</li>
+<li>&quot;Patient_Select_Message&quot; (String) メッセージ</li>
+<li>&quot;Select_Answer&quot; (&quot;Ok&quot;, &quot;Ng&quot;) 確認回答</li>
 </ul>
 </div>
           
@@ -463,29 +481,29 @@
       <pre class="lines">
 
 
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
 108
 109
 110
-111</pre>
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01'>call_01</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -499,7 +517,7 @@
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_res'>res</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_03'>call_03</span><span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_03_with_answer'>call_03_with_answer</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_res'>res</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
     <span class='id identifier rubyid_locked_result'>locked_result</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='kw'>end</span>
@@ -517,7 +535,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue May  1 04:49:15 2018 by
+  Generated on Tue May  1 04:51:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.7).
 </div>
