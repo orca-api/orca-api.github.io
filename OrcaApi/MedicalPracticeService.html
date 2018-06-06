@@ -214,7 +214,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="MedicalPracticeService/EmptyDeleteNumberInfoError.html" title="OrcaApi::MedicalPracticeService::EmptyDeleteNumberInfoError (class)">EmptyDeleteNumberInfoError</a></span>, <span class='object_link'><a href="MedicalPracticeService/UnselectedError.html" title="OrcaApi::MedicalPracticeService::UnselectedError (class)">UnselectedError</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="MedicalPracticeService/EmptyDeleteNumberInfoError.html" title="OrcaApi::MedicalPracticeService::EmptyDeleteNumberInfoError (class)">EmptyDeleteNumberInfoError</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response2Result.html" title="OrcaApi::MedicalPracticeService::Response2Result (class)">Response2Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">Response3Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/UnselectedError.html" title="OrcaApi::MedicalPracticeService::UnselectedError (class)">UnselectedError</a></span>
     
   
 </p>
@@ -241,7 +241,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#calc_medical_practice_fee-instance_method" title="#calc_medical_practice_fee (instance method)">#<strong>calc_medical_practice_fee</strong>(params)  &#x21d2; OrcaApi::Result, ... </a>
+      <a href="#calc_medical_practice_fee-instance_method" title="#calc_medical_practice_fee (instance method)">#<strong>calc_medical_practice_fee</strong>(params)  &#x21d2; OrcaApi::MedicalPracticeService::Response3Result, ... </a>
     
 
     
@@ -287,7 +287,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>(params)  &#x21d2; OrcaApi::Result </a>
+      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>(params)  &#x21d2; Response3Result </a>
     
 
     
@@ -358,7 +358,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_default-instance_method" title="#get_default (instance method)">#<strong>get_default</strong>(params)  &#x21d2; OrcaApi::Result </a>
+      <a href="#get_default-instance_method" title="#get_default (instance method)">#<strong>get_default</strong>(params)  &#x21d2; Response1Result </a>
     
 
     
@@ -381,7 +381,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_examination_fee-instance_method" title="#get_examination_fee (instance method)">#<strong>get_examination_fee</strong>(params)  &#x21d2; OrcaApi::Result </a>
+      <a href="#get_examination_fee-instance_method" title="#get_examination_fee (instance method)">#<strong>get_examination_fee</strong>(params)  &#x21d2; Response1Result </a>
     
 
     
@@ -436,7 +436,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="calc_medical_practice_fee-instance_method">
   
-    #<strong>calc_medical_practice_fee</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>, ... 
+    #<strong>calc_medical_practice_fee</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">OrcaApi::MedicalPracticeService::Response3Result</a></span></tt>, ... 
   
 
   
@@ -682,7 +682,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">OrcaApi::MedicalPracticeService::Response3Result</a></span></tt>)</span>
       
       
       
@@ -741,26 +741,26 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387</pre>
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 371</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 445</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calc_medical_practice_fee'>calc_medical_practice_fee</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invoice_Number</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -927,18 +927,18 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-594
-595
-596
-597
-598
-599
-600
-601
-602</pre>
+668
+669
+670
+671
+672
+673
+674
+675
+676</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 594</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 668</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_contraindication'>check_contraindication</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -957,7 +957,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <div class="method_details ">
   <h3 class="signature " id="create-instance_method">
   
-    #<strong>create</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+    #<strong>create</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">Response3Result</a></span></tt> 
   
 
   
@@ -1146,7 +1146,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">Response3Result</a></span></tt>)</span>
       
       
       
@@ -1175,35 +1175,35 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-459
-460
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484</pre>
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 459</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 533</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invoice_Number</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -1308,26 +1308,26 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-537
-538
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553</pre>
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 537</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 611</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_update'>call_01_for_update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Delete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1521,18 +1521,18 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-520
-521
-522
-523
-524
-525
-526
-527
-528</pre>
+594
+595
+596
+597
+598
+599
+600
+601
+602</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 520</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 594</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_update'>call_01_for_update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Modify</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1551,7 +1551,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <div class="method_details ">
   <h3 class="signature " id="get_default-instance_method">
   
-    #<strong>get_default</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+    #<strong>get_default</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></tt> 
   
 
   
@@ -1610,7 +1610,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></tt>)</span>
       
       
       
@@ -1622,29 +1622,38 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
   
 </ul>
 
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf</a></li>
+    
+      <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf</a></li>
+    
+  </ul>
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-115
-116
-117
-118
-119
-120
-121</pre>
+189
+190
+191
+192
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_default'>get_default</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>00</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
   <span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api21/medicalmodv31</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>medicalv3req1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api21/medicalmodv31</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>medicalv3req1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1654,7 +1663,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <div class="method_details ">
   <h3 class="signature " id="get_examination_fee-instance_method">
   
-    #<strong>get_examination_fee</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt> 
+    #<strong>get_examination_fee</strong>(params)  &#x21d2; <tt><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></tt> 
   
 
   
@@ -1857,7 +1866,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Result.html" title="OrcaApi::Result (class)">OrcaApi::Result</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></tt>)</span>
       
       
       
@@ -1886,16 +1895,16 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239</pre>
+307
+308
+309
+310
+311
+312
+313</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 307</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_examination_fee'>get_examination_fee</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_create'>call_01_for_create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -1914,7 +1923,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 </div>
 
       <div id="footer">
-  Generated on Thu May 24 03:57:58 2018 by
+  Generated on Wed Jun  6 01:29:49 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.7).
 </div>

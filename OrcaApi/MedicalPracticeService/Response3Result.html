@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: OrcaApi::AcceptanceService::ListResult
+  Class: OrcaApi::MedicalPracticeService::Response3Result
   
     &mdash; Documentation by YARD 0.9.12
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "OrcaApi::AcceptanceService::ListResult";
+  pathId = "OrcaApi::MedicalPracticeService::Response3Result";
   relpath = '../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../_index.html">Index (L)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../OrcaApi.html" title="OrcaApi (module)">OrcaApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../AcceptanceService.html" title="OrcaApi::AcceptanceService (class)">AcceptanceService</a></span></span>
+    <a href="../../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../OrcaApi.html" title="OrcaApi (module)">OrcaApi</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../MedicalPracticeService.html" title="OrcaApi::MedicalPracticeService (class)">MedicalPracticeService</a></span></span>
      &raquo; 
-    <span class="title">ListResult</span>
+    <span class="title">Response3Result</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: OrcaApi::AcceptanceService::ListResult
+      <div id="content"><h1>Class: OrcaApi::MedicalPracticeService::Response3Result
   
   
   
@@ -76,7 +76,7 @@
           
             <li class="next"><span class='object_link'><a href="../Result.html" title="OrcaApi::Result (class)">Result</a></span></li>
           
-            <li class="next">OrcaApi::AcceptanceService::ListResult</li>
+            <li class="next">OrcaApi::MedicalPracticeService::Response3Result</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,14 +96,14 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/orca_api/acceptance_service.rb</dd>
+    <dd>lib/orca_api/medical_practice_service.rb</dd>
   </dl>
   
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>listメソッドの戻り値クラス</p>
+    <p>診療行為確認・登録のレスポンスを表現したクラス</p>
 
 
   </div>
@@ -140,7 +140,51 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#list-instance_method" title="#list (instance method)">#<strong>list</strong>  &#x21d2; Object </a>
+      <a href="#cd_information-instance_method" title="#cd_information (instance method)">#<strong>cd_information</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#medical_information-instance_method" title="#medical_information (instance method)">#<strong>medical_information</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print_information-instance_method" title="#print_information (instance method)">#<strong>print_information</strong>  &#x21d2; Hash </a>
     
 
     
@@ -202,29 +246,155 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="list-instance_method">
+  <h3 class="signature first" id="cd_information-instance_method">
   
-    #<strong>list</strong>  &#x21d2; <tt>Object</tt> 
-  
-
+    #<strong>cd_information</strong>  &#x21d2; <tt>Hash</tt> 
   
 
   
-</h3><table class="source_code">
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-8
-9
-10</pre>
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/acceptance_service.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 137</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span>
-  <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Acceptlst_Information</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_cd_information'>cd_information</span>
+  <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cd_Information</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="medical_information-instance_method">
+  
+    #<strong>medical_information</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_medical_information'>medical_information</span>
+  <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Medical_Information</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="print_information-instance_method">
+  
+    #<strong>print_information</strong>  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_print_information'>print_information</span>
+  <span class='const'>Hash</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Print_Information</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
