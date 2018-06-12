@@ -116,6 +116,8 @@
     
       <li><a href="https://www.orca.med.or.jp/receipt/tec/api/subjectives.html" target="_parent" title="https://www.orca.med.or.jp/receipt/tec/api/subjectives.html">https://www.orca.med.or.jp/receipt/tec/api/subjectives.html</a></li>
     
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19548#api2" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/19548#api2">http://cms-edit.orca.med.or.jp/_admin/preview_revision/19548#api2</a></li>
+    
   </ul>
 
 </div><h2>Defined Under Namespace</h2>
@@ -196,6 +198,29 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#list-instance_method" title="#list (instance method)">#<strong>list</strong>(params)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>症状詳記取得.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -253,18 +278,18 @@
       <pre class="lines">
 
 
-67
-68
-69
-70
-71
-72
-73
-74
-75</pre>
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="SubjectiveService/Result.html" title="OrcaApi::SubjectiveService::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span>
@@ -305,18 +330,18 @@
       <pre class="lines">
 
 
-78
-79
-80
-81
-82
-83
-84
-85
-86</pre>
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="SubjectiveService/Result.html" title="OrcaApi::SubjectiveService::Result (class)">Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span>
@@ -332,12 +357,70 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="list-instance_method">
+  
+    #<strong>list</strong>(params)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>症状詳記取得</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_list'>list</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01'>call_01</span> <span class='id identifier rubyid_params'>params</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span> <span class='kw'>unless</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
+
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_subjectives_information'>subjectives_information</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_info'>info</span><span class='op'>|</span>
+    <span class='id identifier rubyid_sub_result'>sub_result</span> <span class='op'>=</span> <span class='id identifier rubyid_call_02'>call_02</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_patient_information'>patient_information</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patient_ID</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_perform_date'>perform_date</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_sub_result'>sub_result</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
+      <span class='id identifier rubyid_info'>info</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Subjectives_Code</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_sub_result'>sub_result</span><span class='period'>.</span><span class='id identifier rubyid_subjectives_code_information'>subjectives_code_information</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Subjectives_Code</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Wed Jun  6 05:09:56 2018 by
+  Generated on Tue Jun 12 06:47:18 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.7).
 </div>
