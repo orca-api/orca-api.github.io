@@ -876,6 +876,29 @@ OrcaApi::Service クラスを継承した高レベルインターフェースを
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#new_statistics_form_service-instance_method" title="#new_statistics_form_service (instance method)">#<strong>new_statistics_form_service</strong>  &#x21d2; StatisticsFormServie </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>StatisticsFormServiceインスタンス.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#new_user_service-instance_method" title="#new_user_service (instance method)">#<strong>new_user_service</strong>  &#x21d2; UserService </a>
     
 
@@ -3006,6 +3029,59 @@ HTTPメソッド</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="new_statistics_form_service-instance_method">
+  
+    #<strong>new_statistics_form_service</strong>  &#x21d2; <tt>StatisticsFormServie</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns StatisticsFormServiceインスタンス</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>StatisticsFormServie</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>StatisticsFormServiceインスタンス</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/client.rb', line 201</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="new_user_service-instance_method">
   
     #<strong>new_user_service</strong>  &#x21d2; <tt><span class='object_link'><a href="UserService.html" title="OrcaApi::UserService (class)">UserService</a></span></tt> 
@@ -3073,15 +3149,15 @@ HTTPメソッド</p>
       <pre class="lines">
 
 
-235
-236
-237
-238
 239
-240</pre>
+240
+241
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/client.rb', line 235</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/client.rb', line 239</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reuse_session'>reuse_session</span>
   <span class='id identifier rubyid_start_reuse_session'>start_reuse_session</span>
@@ -3131,12 +3207,12 @@ HTTPメソッド</p>
       <pre class="lines">
 
 
-242
-243
-244</pre>
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/client.rb', line 242</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/client.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reusing_session?'>reusing_session?</span>
   <span class='ivar'>@reuse_http</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span>
@@ -3151,7 +3227,7 @@ HTTPメソッド</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Jun 12 06:47:16 2018 by
+  Generated on Wed Aug 29 04:49:34 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.3.7).
 </div>
