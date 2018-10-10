@@ -6,7 +6,7 @@
 <title>
   Class: OrcaApi::MedicalPracticeService
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.16
   
 </title>
 
@@ -214,7 +214,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="MedicalPracticeService/EmptyDeleteNumberInfoError.html" title="OrcaApi::MedicalPracticeService::EmptyDeleteNumberInfoError (class)">EmptyDeleteNumberInfoError</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response2Result.html" title="OrcaApi::MedicalPracticeService::Response2Result (class)">Response2Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">Response3Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/UnselectedError.html" title="OrcaApi::MedicalPracticeService::UnselectedError (class)">UnselectedError</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="MedicalPracticeService/EmptyDeleteNumberInfoError.html" title="OrcaApi::MedicalPracticeService::EmptyDeleteNumberInfoError (class)">EmptyDeleteNumberInfoError</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response2Result.html" title="OrcaApi::MedicalPracticeService::Response2Result (class)">Response2Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/Response3Result.html" title="OrcaApi::MedicalPracticeService::Response3Result (class)">Response3Result</a></span>, <span class='object_link'><a href="MedicalPracticeService/ResponseResult.html" title="OrcaApi::MedicalPracticeService::ResponseResult (class)">ResponseResult</a></span>, <span class='object_link'><a href="MedicalPracticeService/UnselectedError.html" title="OrcaApi::MedicalPracticeService::UnselectedError (class)">UnselectedError</a></span>
     
   
 </p>
@@ -528,81 +528,32 @@
       
       
         &mdash;
-        <div class='inline'><p>診察料情報</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">"Patient_ID"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>患者番号/20/必須</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Date"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療日付/10/未設定はシステム日付</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Time"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療時間/8/未使用</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Diagnosis_Information"</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>送信内容
+        <div class='inline'><ul>
+<li>&quot;Patient_ID&quot; (String)
+患者番号/20/必須</li>
+<li>&quot;Perform_Date&quot; (String)
+診療日付/10/未設定はシステム日付</li>
+<li>&quot;Perform_Time&quot; (String)
+診療時間/8/未使用</li>
+<li>&quot;Diagnosis_Information&quot; (Hash)
 MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot; と同じデータを渡す。
-以下は追加パラメータ</p>
+以下は追加パラメータ
 
 <ul>
 <li>&quot;Outside_Class&quot; (&quot;False&quot;, &quot;True&quot;)
 院内・院外区分/5/院内＝False、院外＝True（未設定はシステム管理）</li>
-<li>&quot;Medical_Information&quot; ({ &quot;Medical_Info&quot; =&gt; <Hash> })
-診療行為情報
-
-<ul>
+<li>&quot;Medical_Information&quot; ({ &quot;Medical_Info&quot; =&gt; Array<Hash> })
+診療行為情報</li>
 <li>&quot;Medical_Class&quot; (String)
 診療種別区分/3/必須</li>
 <li>&quot;Medical_Class_Name&quot; (String)
 診療種別区分名称/40</li>
 <li>&quot;Medical_Class_Number&quot; (String)
 回数/3/未設定は１、０はエラー</li>
-<li>&quot;Medication_Info&quot; (<Hash>)
-診療剤明細（５０）/50</li>
+<li>&quot;Medication_Info&quot; (Array<Hash>)
+診療剤明細（５０）/50
+
+<ul>
 <li>&quot;Medication_Code&quot; (String)
 診療コード/9</li>
 <li>&quot;Medication_Name&quot; (String)
@@ -613,12 +564,9 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 <li>&quot;Medication_Moeny&quot; (String)
 自費金額/7/金額ゼロで登録してある自費コードの金額（消費税込）</li>
 <li>&quot;Medication_Input_Info&quot; (&lt;{ &quot;Medication_Input_Code&quot; =&gt; String }&gt;)
-コメント埋め込み数値（５）/5
-
-<ul>
+コメント埋め込み数値（５）/5</li>
 <li>&quot;Medication_Input_Code&quot; (String)
 コメント埋め込み数値/8/（１）から順に数値を編集</li>
-</ul></li>
 <li>&quot;Medication_Film_Comp_Number&quot; (String)
 フィルム分画数/3</li>
 <li>&quot;Medication_Continue&quot; (String)
@@ -632,49 +580,29 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 自動区分/1。
 レスポンス内容をリクエスト内容として返却する時そのまま返却すること。変更した場合の不具合は保障できない。</li>
 </ul></li>
-</ul>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Medical_Select_Information"</span>
-          <span class="type">(<tt>&lt;Hash&gt;</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>確認領域</p>
+</ul></li>
+<li>&quot;Medical_Select_Information&quot; (Array<Hash>)
+確認領域
 
 <ul>
 <li>&quot;Medical_Select&quot; (String)
 確認メッセージコード</li>
 <li>&quot;Select_Answer&quot; (&quot;Ok&quot;, &quot;No&quot;)
 確認メッセージ返答</li>
-</ul>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Delete_Number_Info"</span>
-          <span class="type">(<tt>&lt;Hash&gt;</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>在削除連番</p>
+</ul></li>
+<li>&quot;Delete_Number_Info&quot; (Array<Hash>)
+在削除連番
 
 <ul>
 <li>&quot;Delete_Number&quot; (String)
 在削除連番</li>
+</ul></li>
 </ul>
 </div>
-          
-        </li>
       
-    </ul>
+    </li>
   
+</ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -741,26 +669,26 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
-456
-457
-458
-459
-460
-461</pre>
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 445</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 478</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calc_medical_practice_fee'>calc_medical_practice_fee</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invoice_Number</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -843,73 +771,29 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
         &mdash;
         <div class='inline'><p>薬剤併用禁忌情報</p>
+
+<ul>
+<li>&quot;Patient_ID&quot; (String)
+患者ID</li>
+<li>&quot;Perform_Month&quot; (String)
+診療年月/7/未設定はシステム日付</li>
+<li>&quot;Check_Term&quot; (String)
+チェック期間/2/未設定はシステム管理の相互作用チェック期間</li>
+<li>&quot;Medical_Information&quot; (Array<Hash>)
+チェック薬剤情報
+
+<ul>
+<li>&quot;Medication_Code&quot; (String)
+薬剤コード/9</li>
+<li>&quot;Medication_Name&quot; (String)
+薬剤名称</li>
+</ul></li>
+</ul>
 </div>
       
     </li>
   
 </ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">"Patient_ID"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>患者ID</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Month"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療年月/7/未設定はシステム日付</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Check_Term"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>チェック期間/2/未設定はシステム管理の相互作用チェック期間</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Medical_Information"</span>
-          <span class="type">(<tt>&lt;Hash&gt;</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>チェック薬剤情報</p>
-
-<ul>
-<li>&quot;Medication_Code&quot; (String) 薬剤コード/9</li>
-<li>&quot;Medication_Name&quot; (String) 薬剤名称</li>
-</ul>
-</div>
-          
-        </li>
-      
-    </ul>
-  
 
 
   <p class="tag_title">See Also:</p>
@@ -927,18 +811,18 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-668
-669
-670
-671
-672
-673
-674
-675
-676</pre>
+703
+704
+705
+706
+707
+708
+709
+710
+711</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 668</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 703</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_contraindication'>check_contraindication</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -1002,85 +886,27 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
       
         &mdash;
-        <div class='inline'><p>診察料情報</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">"Base_Date"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>基準日/10/収納発行日を診療日付以外とする時に設定</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Ic_Code"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>入金方法/2/未設定は、システム管理・患者登録設定内容</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Ic_Request_Code"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>入金取り扱い区分/1。
-訂正時は１のみとする。初期設定はシステム管理による。</p>
+        <div class='inline'><ul>
+<li>&quot;Base_Date&quot; (String)
+基準日/10/収納発行日を診療日付以外とする時に設定</li>
+<li>&quot;Ic_Code&quot; (String)
+入金方法/2/未設定は、システム管理・患者登録設定内容</li>
+<li>&quot;Ic_Request_Code&quot; (String)
+入金取り扱い区分/1。
+訂正時は１のみとする。初期設定はシステム管理による。
 
 <ul>
-<li>1:今回請求分のみ入力</li>
-<li>2:今回分・伝票の古い未収順に入金</li>
-<li>3:今回分・伝票の新しい未収順に入金</li>
-<li>4:伝票の古い未収順に入金</li>
-<li>5:伝票の新しい未収順に入金</li>
-</ul>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Ic_All_Code"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>一括入返金区分/1。
-入金取り扱い区分が２から５で、前回までの未収額・前回までの過入金がある時のみ「１」で一括入返金処理を行う。</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Cd_Information"</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>収納情報</p>
+<li>1: 今回請求分のみ入力</li>
+<li>2: 今回分・伝票の古い未収順に入金</li>
+<li>3: 今回分・伝票の新しい未収順に入金</li>
+<li>4: 伝票の古い未収順に入金</li>
+<li>5: 伝票の新しい未収順に入金</li>
+</ul></li>
+<li>&quot;Ic_All_Code&quot; (String)
+一括入返金区分/1。
+入金取り扱い区分が２から５で、前回までの未収額・前回までの過入金がある時のみ「１」で一括入返金処理を行う。</li>
+<li>&quot;Cd_Information&quot; (Hash)
+収納情報
 
 <ul>
 <li>&quot;Ad_Money1&quot; (String)
@@ -1094,32 +920,25 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 <li>&quot;Re_Money&quot; (String)
 返金額/10/マイナス不可。
 新規は前回過入金がある時に全額設定、訂正時（前回請求額－今回請求額）がマイナスの時のみ全額設定（返金するときのみ）。</li>
-</ul>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Print_Information"</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>印刷区分</p>
+</ul></li>
+<li>&quot;Print_Information&quot; (Hash)
+印刷区分
 
 <ul>
 <li>&quot;Print_Prescription_Class&quot; (String)
 処方せん印刷区分/1/０：発行なし、１：発行あり、２：院内処方発行</li>
 <li>&quot;Print_Invoice_Receipt_Class&quot; (String)
-請求書兼領収書印刷区分/1。
+請求書兼領収書印刷区分/1。</li>
+<li>新規
 
 <ul>
-<li>新規</li>
 <li>0：発行なし</li>
 <li>1：発行あり</li>
 <li>2：発行あり（1：と違いはない）</li>
-<li>訂正</li>
+</ul></li>
+<li>訂正
+
+<ul>
 <li>0：発行なし</li>
 <li>1：発行あり（訂正分）</li>
 <li>2：発行あり（合計）</li>
@@ -1132,13 +951,13 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 薬手帳印刷区分/1/０：発行なし、１：発行あり、２：院外分発行</li>
 <li>&quot;Print_Appointment_Form_Class&quot; (String)
 予約票印刷区分/1/０：発行なし、１：発行あり</li>
+</ul></li>
 </ul>
 </div>
-          
-        </li>
       
-    </ul>
+    </li>
   
+</ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1175,35 +994,35 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-533
-534
-535
-536
-537
-538
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
-554
-555
-556
-557
-558</pre>
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 533</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 564</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invoice_Number</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -1266,7 +1085,25 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
       
         &mdash;
-        <div class='inline'><p>診療行為情報</p>
+        <div class='inline'><ul>
+<li>&quot;Patient_ID&quot; (String)
+患者番号/20/必須</li>
+<li>&quot;Perform_Date&quot; (String)
+診療日付/10/未設定はシステム日付</li>
+<li>&quot;Invoice_Number&quot; (String)
+伝票番号/7。
+伝票番号がない時のみ、診療科・保険組合せ・連番から受診履歴を決定する。</li>
+<li>&quot;Department_Code&quot; (String)
+診療科/1。
+伝票番号を優先とする。</li>
+<li>&quot;Insurance_Combination_Number&quot; (String)
+保険組合せ番号/4。
+伝票番号を優先とする。</li>
+<li>&quot;Sequential_Number&quot; (String)
+連番/1。
+伝票番号を優先とする。
+連番の未設定は１とする。</li>
+</ul>
 </div>
       
     </li>
@@ -1308,26 +1145,26 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627</pre>
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 611</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 641</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_update'>call_01_for_update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Delete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1393,98 +1230,30 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
       
         &mdash;
-        <div class='inline'><p>診療行為情報</p>
+        <div class='inline'><ul>
+<li>&quot;Patient_ID&quot; (String)
+患者番号/20/必須</li>
+<li>&quot;Perform_Date&quot; (String)
+診療日付/10/未設定はシステム日付</li>
+<li>&quot;Invoice_Number&quot; (String)
+伝票番号/7。
+伝票番号がない時のみ、診療科・保険組合せ・連番から受診履歴を決定する。</li>
+<li>&quot;Department_Code&quot; (String)
+診療科/1。
+伝票番号を優先とする。</li>
+<li>&quot;Insurance_Combination_Number&quot; (String)
+保険組合せ番号/4。
+伝票番号を優先とする。</li>
+<li>&quot;Sequential_Number&quot; (String)
+連番/1。
+伝票番号を優先とする。
+連番の未設定は１とする。</li>
+</ul>
 </div>
       
     </li>
   
 </ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">"Patient_ID"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>患者番号/20/必須</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Date"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療日付/10/未設定はシステム日付</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Invoice_Number"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>伝票番号/7。
-伝票番号がない時のみ、診療科・保険組合せ・連番から受診履歴を決定する。</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Department_Code"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療科/1。
-伝票番号を優先とする。</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Insurance_Combination_Number"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>保険組合せ番号/4。
-伝票番号を優先とする。</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Sequential_Number"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>連番/1。
-伝票番号を優先とする。
-連番の未設定は１とする。</p>
-</div>
-          
-        </li>
-      
-    </ul>
-  
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1521,18 +1290,18 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-594
-595
-596
-597
-598
-599
-600
-601
-602</pre>
+624
+625
+626
+627
+628
+629
+630
+631
+632</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 594</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 624</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_update'>call_01_for_update</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Modify</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1579,20 +1348,17 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
         &mdash;
         <div class='inline'><ul>
-<li>Patient_ID (String)
+<li>&quot;Patient_ID&quot; (String)
 患者番号。必須。</li>
-<li>Perform_Date (String)
+<li>&quot;Perform_Date&quot; (String)
 診療日付。YYYY-mm-dd形式。未設定はシステム日付。</li>
-<li>Diagnosis_Information (Hash)
+<li>&quot;Diagnosis_Information&quot; (Hash)
 
 <ul>
-<li>Department_Code (String)
+<li>&quot;Department_Code&quot; (String)
 診療科。必須。</li>
-</ul></li>
-<li>Medical_Information (Hash)
-
-<ul>
-<li>Doctors_Fee (String)
+<li>&quot;Medical_Information&quot; (Hash)</li>
+<li>&quot;Doctors_Fee&quot; (String)
 診察料区分。
 01: 初診、02:再診、03:電話再診、09:診察料なし。
 設定がなければ、病名などから診察料を返却する。</li>
@@ -1625,6 +1391,8 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
+      <li><a href="http://cms-edit.orca.med.or.jp/_admin/preview_revision/16921#api10" target="_parent" title="http://cms-edit.orca.med.or.jp/_admin/preview_revision/16921#api10">http://cms-edit.orca.med.or.jp/_admin/preview_revision/16921#api10</a></li>
+    
       <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3.pdf</a></li>
     
       <li><a href="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf" target="_parent" title="http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf">http://cms-edit.orca.med.or.jp/receipt/tec/api/haori-overview.data/api021s1v3_err.pdf</a></li>
@@ -1637,23 +1405,31 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-189
-190
-191
-192
-193
-194
-195</pre>
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 217</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_default'>get_default</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_req'>req</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>00</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
+  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>medicalv3req1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request_Number</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>00</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Karte_Uid</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_karte_uid'>karte_uid</span>
+    <span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+  <span class='const'><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="MedicalPracticeService/ResponseResult.html#initialize-instance_method" title="OrcaApi::MedicalPracticeService::ResponseResult#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+    <span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api21/medicalmodv31</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_ignore_medical_warnings'>ignore_medical_warnings</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="MedicalPracticeService/Response1Result.html" title="OrcaApi::MedicalPracticeService::Response1Result (class)">Response1Result</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Result.html#initialize-instance_method" title="OrcaApi::Result#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api21/medicalmodv31</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>body:</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>medicalv3req1</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_req'>req</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1723,74 +1499,25 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       
       
         &mdash;
-        <div class='inline'><p>診察料情報</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  
-    
-    
-    <p class="tag_title">Options Hash (<tt>params</tt>):</p>
-    <ul class="option">
-      
-        <li>
-          <span class="name">"Patient_ID"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>患者番号/20/必須</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Date"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療日付/10/未設定はシステム日付</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Perform_Time"</span>
-          <span class="type">(<tt>String</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>診療時間/8/未使用</p>
-</div>
-          
-        </li>
-      
-        <li>
-          <span class="name">"Diagnosis_Information"</span>
-          <span class="type">(<tt>Hash</tt>)</span>
-          <span class="default">
-            
-          </span>
-          
-            &mdash; <div class='inline'><p>送信内容</p>
+        <div class='inline'><ul>
+<li>&quot;Patient_ID&quot; (String)
+患者番号/20/必須</li>
+<li>&quot;Perform_Date&quot; (String)
+診療日付/10/未設定はシステム日付</li>
+<li>&quot;Perform_Time&quot; (String)
+診療時間/8/未使用</li>
+<li>&quot;Diagnosis_Information&quot; (Hash)
 
 <ul>
-<li>&quot;Department_Code&quot; (String) 診療科/2/必須</li>
-<li>&quot;Physician_Code&quot; (String) ドクターコード/5</li>
+<li>&quot;Department_Code&quot; (String)
+診療科/2/必須</li>
+<li>&quot;Physician_Code&quot; (String)
+ドクターコード/5</li>
 <li>&quot;HealthInsurance_Information&quot; (Hash)
 保険情報。
 保険組合せ又は保険・公費から保険組合せを決定。
 包括分入力（保険組合せ＝９９９９、保険の種類＝９９）。
-診察料区分（Doctors_Fee）＝０９　は省略可。
-
-<ul>
+診察料区分（Doctors_Fee）＝０９　は省略可。</li>
 <li>&quot;Insurance_Combination_Number&quot; (String)
 保険組合せ番号/4/指定があれば優先</li>
 <li>&quot;InsuranceProvider_Class&quot; (String)
@@ -1816,7 +1543,9 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 <li>&quot;Certificate_ExpiredDate&quot; (String)
 適用終了日/10</li>
 <li>&quot;PublicInsurance_Information&quot; (Hash)
-公費情報　（４）/4</li>
+公費情報　（４）/4
+
+<ul>
 <li>&quot;PublicInsurance_Class&quot; (String)
 公費の種類/3</li>
 <li>&quot;PublicInsurance_Name&quot; (String)
@@ -1831,9 +1560,7 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 適用終了日/10</li>
 </ul></li>
 <li>&quot;Medical_Information&quot; (Hash)
-診療送信内容
-
-<ul>
+診療送信内容</li>
 <li>&quot;OffTime&quot; (String)
 時間外区分/1/外来時間外区分（０から８）とする（環境設定の外来時間外区分）</li>
 <li>&quot;Doctors_Fee&quot; (String)
@@ -1844,7 +1571,9 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 <li>&quot;Medical_Class_Name&quot; (String)
 診療種別区分名称/40</li>
 <li>&quot;Medication_Info&quot; (Hash)
-診療行為</li>
+診療行為
+
+<ul>
 <li>&quot;Medication_Code&quot; (String)
 診療コード/9/診察料コード。
 コードが使用できるかのチェックを行う。
@@ -1852,13 +1581,13 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 <li>&quot;Medication_Name&quot; (String)
 名称/80</li>
 </ul></li>
+</ul></li>
 </ul>
 </div>
-          
-        </li>
       
-    </ul>
+    </li>
   
+</ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1895,16 +1624,16 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
       <pre class="lines">
 
 
-307
-308
-309
-310
-311
-312
-313</pre>
+339
+340
+341
+342
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 307</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/medical_practice_service.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_examination_fee'>get_examination_fee</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01_for_create'>call_01_for_create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -1923,9 +1652,9 @@ MedicalPracticeService#get_examination_fee の &quot;Diagnosis_Information&quot;
 </div>
 
       <div id="footer">
-  Generated on Wed Aug 29 04:49:36 2018 by
+  Generated on Wed Oct 10 06:15:09 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.3.7).
+  0.9.16 (ruby-2.3.7).
 </div>
 
     </div>
