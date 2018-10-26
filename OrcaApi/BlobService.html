@@ -187,7 +187,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(uid, output_io = Tempfile.new)  &#x21d2; OrcaApi::BinaryResult </a>
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(uid, output_io = Tempfile.new(binmode: true))  &#x21d2; OrcaApi::BinaryResult </a>
     
 
     
@@ -242,7 +242,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="get-instance_method">
   
-    #<strong>get</strong>(uid, output_io = Tempfile.new)  &#x21d2; <tt><span class='object_link'><a href="BinaryResult.html" title="OrcaApi::BinaryResult (class)">OrcaApi::BinaryResult</a></span></tt> 
+    #<strong>get</strong>(uid, output_io = Tempfile.new(binmode: true))  &#x21d2; <tt><span class='object_link'><a href="BinaryResult.html" title="OrcaApi::BinaryResult (class)">OrcaApi::BinaryResult</a></span></tt> 
   
 
   
@@ -282,7 +282,7 @@
         <span class='type'>(<tt>IO</tt>, <tt>nil</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>Tempfile.new</tt>)</em>
+        <em class="default">(defaults to: <tt>Tempfile.new(binmode: true)</tt>)</em>
       
       
         &mdash;
@@ -328,7 +328,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/orca_api/blob_service.rb', line 58</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_uid'>uid</span><span class='comma'>,</span> <span class='id identifier rubyid_output_io'>output_io</span> <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_uid'>uid</span><span class='comma'>,</span> <span class='id identifier rubyid_output_io'>output_io</span> <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>binmode:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/blobapi/</span><span class='embexpr_beg'>#{</span><span class='const'>ERB</span><span class='op'>::</span><span class='const'>Util</span><span class='period'>.</span><span class='id identifier rubyid_url_encode'>url_encode</span><span class='lparen'>(</span><span class='id identifier rubyid_uid'>uid</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='const'><span class='object_link'><a href="BinaryResult.html" title="OrcaApi::BinaryResult (class)">BinaryResult</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="BinaryResult.html#initialize-instance_method" title="OrcaApi::BinaryResult#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_orca_api'>orca_api</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>http_method:</span> <span class='symbol'>:get</span><span class='comma'>,</span> <span class='label'>format:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>output_io:</span> <span class='id identifier rubyid_output_io'>output_io</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -342,9 +342,9 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct 12 06:45:50 2018 by
+  Generated on Fri Oct 26 08:48:55 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.16 (ruby-2.3.7).
+  0.9.16 (ruby-2.3.8).
 </div>
 
     </div>
