@@ -314,7 +314,8 @@
 30
 31
 32
-33</pre>
+33
+34</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/income_common.rb', line 18</span>
@@ -327,6 +328,7 @@
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_res'>res</span>
   <span class='kw'>end</span>
+
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_02'>call_02</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_res'>res</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_ok?'>ok?</span>
     <span class='id identifier rubyid_locked_result'>locked_result</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -345,7 +347,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  7 05:38:11 2018 by
+  Generated on Thu Nov 15 01:36:31 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.3.8).
 </div>
