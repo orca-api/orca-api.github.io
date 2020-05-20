@@ -6,7 +6,7 @@
 <title>
   Class: OrcaApi::SubjectiveService::Result
   
-    &mdash; Documentation by YARD 0.9.24
+    &mdash; Documentation by YARD 0.9.25
   
 </title>
 
@@ -320,7 +320,7 @@
       <pre class="code"><span class="info file"># File 'lib/orca_api/subjective_service.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ok?'>ok?</span>
-  <span class='id identifier rubyid_api_result'>api_result</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A(?:0+|K[1234]|WK[123])\z</span><span class='regexp_end'>/</span></span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span>
+  <span class='id identifier rubyid_api_result'>api_result</span><span class='period'>.</span><span class='id identifier rubyid_match?'>match?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A(?:0+|K[1234]|WK[123])\z</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -332,9 +332,9 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Feb  5 03:30:04 2020 by
+  Generated on Wed May 20 12:30:43 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.24 (ruby-2.3.8).
+  0.9.25 (ruby-2.4.10).
 </div>
 
     </div>
