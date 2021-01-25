@@ -6,7 +6,7 @@
 <title>
   Class: OrcaApi::PatientService::HealthPublicInsuranceCommon
   
-    &mdash; Documentation by YARD 0.9.25
+    &mdash; Documentation by YARD 0.9.26
   
 </title>
 
@@ -163,7 +163,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fetch-instance_method" title="#fetch (instance method)">#<strong>fetch</strong>(id)  &#x21d2; Result </a>
+      <a href="#fetch-instance_method" title="#fetch (instance method)">#<strong>fetch</strong>(id, base_date = nil)  &#x21d2; Result </a>
     
 
     
@@ -264,7 +264,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="fetch-instance_method">
   
-    #<strong>fetch</strong>(id)  &#x21d2; <tt><span class='object_link'><a href="HealthPublicInsuranceCommon/Result.html" title="OrcaApi::PatientService::HealthPublicInsuranceCommon::Result (class)">Result</a></span></tt> 
+    #<strong>fetch</strong>(id, base_date = nil)  &#x21d2; <tt><span class='object_link'><a href="HealthPublicInsuranceCommon/Result.html" title="OrcaApi::PatientService::HealthPublicInsuranceCommon::Result (class)">Result</a></span></tt> 
   
 
   
@@ -296,6 +296,23 @@
       
     </li>
   
+    <li>
+      
+        <span class='name'>base_date</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>基準日</p>
+</div>
+      
+    </li>
+  
 </ul>
 
 <p class="tag_title">Returns:</p>
@@ -309,7 +326,8 @@
       
       
         &mdash;
-        <div class='inline'><p>日レセからのレスポンス</p>
+        <div class='inline'><p>日レセからのレスポンス
+基準日の設定がある場合は基準日で保険・公費情報のチェックを行う</p>
 </div>
       
     </li>
@@ -329,15 +347,15 @@
       <pre class="lines">
 
 
-69
-70
-71</pre>
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance_common.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance_common.rb', line 72</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_call_00'>call_00</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_base_date'>base_date</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_call_00'>call_00</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_base_date'>base_date</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -616,9 +634,6 @@ New：新規、Modify：更新、Delete：削除。
       <pre class="lines">
 
 
-167
-168
-169
 170
 171
 172
@@ -637,10 +652,13 @@ New：新規、Modify：更新、Delete：削除。
 185
 186
 187
-188</pre>
+188
+189
+190
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance_common.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/orca_api/patient_service/health_public_insurance_common.rb', line 170</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='id identifier rubyid_call_01'>call_01</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -674,9 +692,9 @@ New：新規、Modify：更新、Delete：削除。
 </div>
 
       <div id="footer">
-  Generated on Tue Aug 25 06:18:38 2020 by
+  Generated on Mon Jan 25 03:49:40 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.25 (ruby-2.4.10).
+  0.9.26 (ruby-2.4.10).
 </div>
 
     </div>
